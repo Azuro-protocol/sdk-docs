@@ -100,8 +100,10 @@ fetchGames uses `resolved: true` and `canceled: true` filters.
 
 ```js
 const games = await fetchGames({
-  resolved: false, // filters games for which there is a result
-  canceled: false, // filters games which were canceled
+  filters: {
+    resolved: false, // filters games for which there is a result
+    canceled: false, // filters games which were canceled
+  }
 })
 ```
 
