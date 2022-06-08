@@ -56,8 +56,7 @@ configure({
 ```
 
 <Callout>
-Note that the package was tested with Rinkeby and Goerli networks. Alchemy doesn't support Goerli network, so if you'd like
-to use Goerli be sure to use Rinkeby key when configuring.
+Note that the package was tested with Sokol network of [Gnosis](https://gnosis.io/) blockchain
 </Callout>
 
 
@@ -68,9 +67,23 @@ Before you start using SDK API you should set used chain ID to specify the Netwo
 ```js
 import { setSelectedChainId } from '@azuro-protocol/sdk'
 
-setSelectedChainId(4) // Rinkeby
+setSelectedChainId(77) // Sokol
 ```
 
+### Setup Smart Contract addresses
+
+You should specify the list of relevant Smart Contract addresses in the Network you have set.
+
+```js
+import { setContractAddresses } from '@azuro-protocol/sdk'
+
+setContractAddresses({
+    core: '0xEf182ba80c2DA39710Fe0834b5Ac2E8e68820704', // SK Addresses in Sokol Network
+    lp: '0x03792012947c6AC35C3B65eAd42E9edd9B7eD6c4',
+    bet: '0x4F0Dc3aAD27379E78C0777f66a07c2ba61B66C71',
+    usdt: '0xf5f125ffFFe359f2Bfe44776B5604eDFa82A0Ff2',
+});
+```
 
 ### Fetch games
 
